@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 2.8)
+project (boost)
+
+if(NOT EXISTS ./ext)
+	IF (WIN32)
+	    set(SLASH \\)
+	    set(SH_EXT bat)
+	ELSE()
+	    set(SLASH /)
+	    set(SH_EXT sh)
+	ENDIF()
+
+	execute_process(COMMAND git clone https://github.com/boostorg/boost.git ./ext)
+	execute_process(COMMAND git submodule update --init --recursive WORKING_DIRECTORY ./ext)
+	execute_process(COMMAND .${SLASH}bootstrap.${SH_EXT} WORKING_DIRECTORY ./ext )
+	execute_process(COMMAND .${SLASH}b2 WORKING_DIRECTORY ./ext )
+endif()
