@@ -14,7 +14,7 @@ execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/ext/bootstrap.${SH_EXT} WORK
 execute_process(COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/ext/b2 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/ext )
 
 execute_process(COMMAND rm -rf ${CMAKE_CURRENT_BINARY_DIR})
-execute_process(COMMAND mv
+execute_process(COMMAND cp
 	${CMAKE_CURRENT_SOURCE_DIR}/ext/stage/lib/
 	${CMAKE_CURRENT_BINARY_DIR}
 )
