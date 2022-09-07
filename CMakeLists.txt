@@ -18,7 +18,7 @@ execute_process(COMMAND .${SLASH}bootstrap${SH_EXT} WORKING_DIRECTORY ${CMAKE_CU
 execute_process(COMMAND .${SLASH}b2${EXE_EXT} address-model=64 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/ext )
 
 execute_process(COMMAND rm -rf ${CMAKE_CURRENT_BINARY_DIR})
-execute_process(COMMAND cp
+file(COPY 
 	${CMAKE_CURRENT_SOURCE_DIR}/ext/stage/lib/
-	${CMAKE_CURRENT_BINARY_DIR}
+	DESTINATION ${CMAKE_CURRENT_BINARY_DIR}
 )
