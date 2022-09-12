@@ -38,7 +38,7 @@ if(numoutputfiles EQUAL 0)
 	execute_process(COMMAND rm -rf ${CMAKE_BINARY_DIR})
 	file(COPY 
 		${CMAKE_CURRENT_SOURCE_DIR}/ext/stage/lib/
-		DESTINATION ${CMAKE_BINARY_DIR}
+		DESTINATION ${CMAKE_BINARY_DIR}/ext/boost/
 	)
 	
 endif()
