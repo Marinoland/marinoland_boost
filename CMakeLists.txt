@@ -20,7 +20,7 @@ ELSE()
 	set(B2_ARGS )
 ENDIF()
 
-file(GLOB outputfiles "${CMAKE_BINARY_DIR}/libboost_*")
+file(GLOB outputfiles "${CMAKE_BINARY_DIR}/ext/boost/libboost_*")
 list(LENGTH outputfiles numoutputfiles)
 if(numoutputfiles EQUAL 0)
 
