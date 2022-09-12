@@ -28,7 +28,7 @@ if(numoutputfiles EQUAL 0)
 	execute_process(COMMAND git submodule update --init --recursive)
 
 	execute_process(COMMAND .${SLASH}build${SH_EXT} ${BOOTSTRAP_ARGS} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/ext/tools/build/src/engine )
-	file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/ext/tools/build/src/engine/b2.exe
+	file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/ext/tools/build/src/engine/b2${EXE_EXT}
 		DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/ext/
 	)
 	# went direct to "build" due to bootstrap incorrectly determining the toolset
