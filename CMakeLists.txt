@@ -34,6 +34,8 @@ if(numoutputfiles EQUAL 0)
 	# went direct to "build" due to bootstrap incorrectly determining the toolset
 	#execute_process(COMMAND .${SLASH}bootstrap${SH_EXT} ${BOOTSTRAP_ARGS} WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/ext )
 	execute_process(COMMAND .${SLASH}b2${EXE_EXT} ${B2_ARGS} address-model=64 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/ext )
+	execute_process(COMMAND .${SLASH}b2${EXE_EXT} headers WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/ext )
+
 
 	execute_process(COMMAND rm -rf ${CMAKE_BINARY_DIR})
 	file(COPY 
